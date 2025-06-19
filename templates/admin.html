@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light py-4">
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-success">Códigos Ingresados</h2>
+            <div>
+                <a href="/exportar" class="btn btn-outline-primary btn-sm me-2">📤 Exportar JSON</a>
+                <a href="/logout" class="btn btn-outline-danger btn-sm">Salir</a>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                {% if codigos %}
+                    <ul class="list-group">
+                        {% for id, codigo, fecha in codigos %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><strong>{{ codigo }}</strong></span>
+                                <span class="text-muted">{{ fecha }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-muted">No se han ingresado códigos todavía.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
