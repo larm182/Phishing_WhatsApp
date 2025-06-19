@@ -1,11 +1,11 @@
 # Phishing_WhatsApp
 Creación de una plataforma falsa de verificación tipo WhatsApp con captura y almacenamiento de códigos, orientada al análisis del comportamiento humano durante campañas de ingeniería social.
 
-#Instalacion 
+# Instalacion 
 
 pip install -r requirements.txt
 
-#RUN
+# RUN
 python3 app.py
 
 Ruta: http://127.0.0.1:5000/
